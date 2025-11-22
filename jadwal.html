@@ -1,0 +1,198 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Class Schedule - Software Engineering</title>
+  <!-- Replace the href below with the path to your image (favicon). Recommended: 32x32 PNG or ICO in the images/ folder -->
+  <link rel="icon" href="pplg.png" />  <style>
+    :root{
+      /* Harmonic color palette (soft, modern) */
+      --bg: #f5f8fb;        /* very light blue */
+      --card: #ffffff;      /* white cards */
+      --accent-1: #5aa9e6;  /* soft sky blue */
+      --accent-2: #2ea79f;  /* teal */
+      --accent-3: #f29e8e;  /* gentle coral */
+      --muted: #6b7280;     /* muted gray */
+      --glass: rgba(255,255,255,0.6);
+      --shadow: 0 8px 24px rgba(20,30,50,0.08);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: linear-gradient(180deg,var(--bg),#eef6fb); color:#111}
+
+    .container{max-width:980px;margin:36px auto;padding:24px}
+
+    header{display:flex;align-items:flex-start;gap:18px}
+    .brand{display:flex;flex-direction:column;gap:8px}
+
+    h1{margin:0;font-size:28px;color:var(--accent-1);letter-spacing:-0.2px}
+    p.lead{margin:0;color:var(--muted);max-width:760px;line-height:1.45}
+
+    .top-card{background:linear-gradient(180deg,var(--glass),#ffffff);backdrop-filter:blur(6px);border-radius:14px;padding:18px;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:space-between}
+
+    .meta{display:flex;gap:12px;align-items:center}
+    .logo{width:64px;height:64px;border-radius:10px;overflow:hidden;flex:0 0 64px;box-shadow:0 6px 18px rgba(30,40,60,0.06)}
+    .logo img{width:100%;height:100%;object-fit:cover}
+
+    .desc{padding-right:8px}
+
+    .controls{display:flex;gap:8px;align-items:center}
+    .btn{background:var(--accent-2);color:#fff;padding:8px 12px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+    .btn.secondary{background:transparent;border:1px solid rgba(0,0,0,0.06);color:var(--muted)}
+
+    /* Table card */
+    .card{margin-top:20px;background:var(--card);border-radius:12px;padding:16px;box-shadow:var(--shadow)}
+
+    .table-wrap{overflow:auto}
+    table{width:100%;border-collapse:collapse;min-width:740px}
+    thead th{position:sticky;top:0;background:linear-gradient(90deg,var(--card),#fbfdff);padding:12px 14px;text-align:left;font-weight:700;color:var(--muted);border-bottom:1px solid #eef4fb}
+    tbody td{padding:12px 14px;border-bottom:1px dashed #f0f5fb}
+
+    .time{width:120px;font-weight:600;color:var(--accent-1)}
+    .subject{font-weight:700}
+    .teacher{font-size:13px;color:var(--muted)}
+
+    /* nice row highlight */
+    tbody tr:hover{background:linear-gradient(90deg, rgba(90,169,230,0.03), rgba(46,167,159,0.01))}
+
+    /* responsive tweaks */
+    @media (max-width:720px){
+      .container{padding:12px}
+      h1{font-size:20px}
+      .logo{width:52px;height:52px}
+      table{min-width:640px}
+    }
+
+    /* small helper styles */
+    .muted{color:var(--muted);font-size:13px}
+    .badge{display:inline-block;padding:6px 8px;border-radius:8px;font-weight:600}
+    .badge.blue{background:linear-gradient(90deg,var(--accent-1),#6cc2ef);color:#fff}
+    .badge.coral{background:linear-gradient(90deg,var(--accent-3),#f6b9ab);color:#6a2e2e}
+
+    /* subtle entrance animation */
+    .fade-in{animation:fadeIn .6s ease both}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+    /* styling for editable cells */
+    td[contenteditable]{outline:none}
+    td[contenteditable]:focus{box-shadow:inset 0 -2px 0 var(--accent-1)}
+
+  </style></head>
+<body>
+  <div class="container"><div class="top-card fade-in">
+  <div style="display:flex;gap:14px;align-items:center">
+    
+
+    <div class="brand">
+      <div class="desc">
+        <h1>Welcome to Software Engineering</h1>
+        <p class="lead">selamat datang di web pengembangan perangkat lunak dan gim disini kalian bisa belajar tentang software Engineering dan pembuatan web basis data dan lain-lain</p>
+      </div>
+      <div class="muted">dibuat langsung oleh defelopment pplg</div>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="card fade-in" style="margin-top:18px">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px">
+    <div>
+      <strong>JADWAL MATA PELAJARAN</strong>
+      <div class="muted">berisi jadwal ,pengajar dan waktu</div>
+    </div>
+    <div class="badge blue">Semester1</div>
+  </div>
+
+  <div class="table-wrap">
+    <table id="scheduleTable" role="table" aria-label="class schedule">
+      <thead>
+        <tr>
+          <th class="time">Waktu</th>
+          <th>senin</th>
+          <th>selasa</th>
+          <th>rabu</th>
+          <th>kamis</th>
+          <th>jum'at</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="time">08:00 - 09:00</td>
+          <td contenteditable="true"><div class="subject">PPKN</div><div class="teacher">(ibu.riani.spd)</div></td>
+          <td contenteditable="true"><div class="subject">DPK</div><div class="teacher">(ibu.israni)</div></td>
+          <td contenteditable="true"><div class="subject">DPK</div><div class="teacher">(ibu.israni)</div></td>
+          <td contenteditable="true"><div class="subject">DPK</div><div class="teacher">(ibu.israni)</div></td>
+          <td contenteditable="true"><div class="subject">DPK</div><div class="teacher">(ibu.israni)</div></td>
+        </tr>
+
+        <tr>
+          <td class="time">09:15 - 10:15</td>
+          <td contenteditable="true"><div class="subject">PJOK</div><div class="teacher">(Bpk.iman)</div></td>
+          <td contenteditable="true"><div class="subject">SEJARAH</div><div class="teacher">(ibu.hema)</div></td>
+          <td contenteditable="true"><div class="subject">PAIBP</div><div class="teacher">(ibu.ratna)</div></td>
+          <td contenteditable="true"><div class="subject">DPK</div><div class="teacher">(ibu.israni)</div></td>
+          <td contenteditable="true"><div class="subject">B.indonesia</div><div class="teacher">(-)</div></td>
+        </tr>
+
+        <tr>
+          <td class="time">10:30 - 11:30</td>
+          <td contenteditable="true"><div class="subject">PPK</div><div class="teacher">(Mr.yusuf)</div></td>
+          <td contenteditable="true"><div class="subject">SEJARAH</div><div class="teacher">(ibu.hema)</div></td>
+          <td contenteditable="true"><div class="subject">SUNDA</div><div class="teacher">(ibu.pepy)</div></td>
+          <td contenteditable="true"><div class="subject">INGGRIS</div><div class="teacher">(Ms.ita)</div></td>
+          <td contenteditable="true"><div class="subject">MPP</div><div class="teacher">(Bpk.agus)</div></td>
+        </tr>
+
+        <tr>
+          <td class="time">13:00 - 14:00</td>
+          <td contenteditable="true"><div class="subject">DPK</div><div class="teacher">(ibu.israni)</div></td>
+          <td contenteditable="true"><div class="subject">MATEMATIKA</div><div class="teacher">(ibu.ika)</div></td>
+          <td contenteditable="true"><div class="subject">B.inggris</div><div class="teacher">(Ms.ita)</div></td>
+          <td contenteditable="true"><div class="subject">DPK</div><div class="teacher">(ibu.israni)</div></td>
+          <td contenteditable="true"><div class="subject">MPP</div><div class="teacher">(Bpk.agus)</div></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+
+  </div>  <script>
+    // Small utilities: download table as CSV, reset sample data
+    function tableToCSV(table){
+      const rows = Array.from(table.querySelectorAll('tr'));
+      return rows.map(r => {
+        const cells = Array.from(r.querySelectorAll('th,td'));
+        return cells.map(c => '"'+ c.innerText.replace(/"/g,'""') +'"').join(',');
+      }).join('\n');
+    }
+
+    document.getElementById('downloadBtn').addEventListener('click', ()=>{
+      const csv = tableToCSV(document.getElementById('scheduleTable'));
+      const blob = new Blob([csv],{type:'text/csv;charset=utf-8;'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'class-schedule.csv';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    });
+
+    document.getElementById('resetBtn').addEventListener('click', ()=>{
+      if(!confirm('Reset sample schedule to the default example?')) return;
+      // simple page reload will restore the original markup
+      location.reload();
+    });
+
+    // Accessibility: make Enter key stop editing and move focus
+    document.querySelectorAll('td[contenteditable]').forEach(td=>{
+      td.addEventListener('keydown', e=>{
+        if(e.key === 'Enter'){
+          e.preventDefault();
+          td.blur();
+        }
+      });
+    });
+
+  </script></body>
+</html>
